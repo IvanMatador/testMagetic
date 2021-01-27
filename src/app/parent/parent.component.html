@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <h1 class="title-main"> {{ categoryName }} </h1>
+  <div class="buttons-box">
+    <button class="btn" 
+        [routerLink]="[ '/4b20aa37-9e1a-4155-82e0-386d171cb1f0' ]" 
+    >
+      Pets
+    </button>
+
+    <button class="btn" 
+        [routerLink]="[ '/b0e78282-d457-4790-97f0-d5c0642bee4d' ]" 
+    >
+      Food
+    </button>
+    <button class="btn" 
+        [routerLink]="[ '/10a827d5-13b5-4cd6-a2d0-9f22dd7738d1' ]" 
+    >
+      Plants
+    </button>
+  </div>
+
+    
+    <div class="content">
+      <div class="card-container" *ngIf="cards">
+        <div class="card" *ngFor="let card of cards">
+          <div class="title">{{ card.title }}</div>
+          <div class="image" [ngStyle]="{'background-image': 'url(' + card.image + ')', 'background-position': 'center', 'background-size':'cover' }"></div>
+          <div class="desc"><p>{{ card.description }}</p></div>
+        </div>
+      </div>
+    </div>
+
+
+</div>
